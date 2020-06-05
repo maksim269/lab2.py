@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<h1>Регистрация</h1>
+<form action="" method="post" novalidate>
+
+    {{form.hidden_tag()}}
+    <p >
+        {{form.username.label}}<br>
+        {{form.username}}<br>
+        {%for error in form.username.errors %}
+        <div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+    {% endfor %}
+
+    </p>
+<p>
+    {{form.password.label}}<br>
+    {{form.password}}<br>
+    {% for error in form.password.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}}
+</p>
+<p>{{ form.remember_me() }} {{form.remember_me.label}}</p>
+<p>{{ form.submit() }}</p>
+    <p>Вернуться на, <a href="../index/">главную?</a></p>
+</form>
+</body>
+</html>
